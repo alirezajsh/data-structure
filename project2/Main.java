@@ -48,9 +48,13 @@ public class Main{
                     ptrn.prev.next = ptrn.next;
                     ptrn.next.prev = ptrn.prev;
                     ptrn = ptrn.next;
+                    start = ptrn;
                     ptrn.value++;
                 }
             }else{
+                while(ptrn.next.value < ptrm.value){
+                    ptrn = ptrn.next;
+                }
                 temp1 = ptrn.next;
                 temp2 = ptrm.next;
                 ptrn.next = ptrm;
@@ -75,6 +79,9 @@ public class Main{
         }else if(ptrn.value == ptrm.value){
             ptrn.value++;
         }else{
+            while(ptrn.next.value < ptrm.value && ptrn != dlln.tail){
+                ptrn = ptrn.next;
+            }
             temp1 = ptrn.next;
             temp2 = ptrm.next;
             ptrn.next = ptrm;
